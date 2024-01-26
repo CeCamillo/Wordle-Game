@@ -5,7 +5,9 @@ function GuessList({ guessList }) {
     <div className="guess-results">
       {guessList.map((guess) => (
         <p className="guess" key={crypto.randomUUID()}>
-          {guess}
+          {guess.split("").map((char) => (
+            <span class="cell">{char}</span>
+          ))}
         </p>
       ))}
     </div>
