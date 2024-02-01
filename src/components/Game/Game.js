@@ -6,8 +6,7 @@ import { range } from '../../utils';
 
 import { sample } from "../../utils";
 import { WORDS } from "../../data";
-import { NUM_OF_GUESSES_ALLOWED } from "../../constants"
-
+import { checkGuess } from "../../game-helpers"
 
 // Pick a random word on every pageload.
 const answer = sample(WORDS);
@@ -22,7 +21,7 @@ function Game() {
   }
   return (
     <>
-      <GuessResults guesses={guesses} />
+      <GuessResults guesses={guesses} answer={answer} />
       <GuessInput handleSubmitGuess={handleSubmitGuess} />
     </>
   );
